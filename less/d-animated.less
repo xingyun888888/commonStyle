@@ -1,0 +1,144 @@
+/*图片翻转*/
+.artGroup(@width,@height) {
+  display: block;
+  width: @width;
+  height: @height;
+  position: relative;
+}
+
+.artwork {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.artGroup img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+}
+
+.artGroup .detail {
+  display: block;
+  background: #aaa;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+
+.artGroup.flip {
+  -webkit-perspective: 800px;
+  perspective: 800px;
+}
+
+.artGroup.flip .artwork {
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.artGroup.flip .detail,
+.artGroup.flip .theFlip {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+.artGroup.flip img,
+.artGroup.flip .detail {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/*缩放+细框*/
+.d-scale(@width){
+  position: relative;
+  width: @width;
+  overflow: hidden;
+}
+.d-scale img {
+  width: 100%;
+  transition: all 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0s;
+}
+.d-scale.hover img,
+.d-scale:hover img {
+  transform: scale(1.1, 1.1);
+}
+.rectborder {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: rgba(255, 255, 255, 0) 1px solid;
+  transition: all ease-out 0.3s;
+  z-index: 11;
+}
+.rectborder:hover {
+  border: #ffffff 1px solid;
+  transform: scale(0.8, 0.8);
+}
+
+/*3d凸出效果*/
+.d-3d{
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+.d-3d:hover{
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, -2px, 0);
+}
+
+/*导航栏三线变×动画*/
+.menu-p-gb(@bgColor:#000){
+  background: @bgColor;
+}
+.nav .menu {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  z-index: 1001;
+}
+.nav .menu p {
+  .menu-p-gb;
+  display: block;
+  width: 30px;
+  height: 3px;
+  border-radius: 3px;
+  margin-bottom: 9px;
+  opacity: 1;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -ms-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all 0.4s ease;
+}
+.nav .menu.active p:nth-child(1) {
+  .menu-p-gb;
+  -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(-10.6px, 6.6px, 0);
+  -moz-transform: rotate3d(0, 0, 1, -45deg) translate3d(-10.6px, 6.6px, 0);
+  -ms-transform: rotate3d(0, 0, 1, -45deg) translate3d(-10.6px, 6.6px, 0);
+  -o-transform: rotate3d(0, 0, 1, -45deg) translate3d(-10.6px, 6.6px, 0);
+  transform: rotate3d(0, 0, 1, -45deg) translate3d(-10.6px, 6.6px, 0);
+}
+.nav .menu.active p:nth-child(2) {
+  opacity: 0;
+  .menu-p-gb;
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  -o-transform: translateX(20px);
+  transform: translateX(20px);
+}
+.nav .menu.active p:nth-child(3) {
+  .menu-p-gb;
+  -webkit-transform: rotate3d(0, 0, 1, 45deg) translate3d(-9.6px, -6.6px, 0);
+  -moz-transform: rotate3d(0, 0, 1, 45deg) translate3d(-9.6px, -6.6px, 0);
+  -ms-transform: rotate3d(0, 0, 1, 45deg) translate3d(-9.6px, -6.6px, 0);
+  -o-transform: rotate3d(0, 0, 1, 45deg) translate3d(-9.6px, -6.6px, 0);
+  transform: rotate3d(0, 0, 1, 45deg) translate3d(-9.6px, -6.6px, 0);
+}

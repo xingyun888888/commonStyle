@@ -1,0 +1,21 @@
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.ct {
+  margin: 0 auto;
+}
+.vt {
+  vertical-align: middle;
+}
+.clear:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.o-f:before {
+  content: " ";
+  display: table;
+}

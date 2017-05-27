@@ -1,0 +1,95 @@
+
+//内边距
+.pd(@padding){
+  padding: @padding;
+}
+//左内边距
+.pd-l(@padding){
+  padding-left: @padding;
+}
+//右内边距
+.pd-r(@padding){
+  padding-right: @padding;
+}
+//上内边距
+.pd-t(@padding){
+  padding-top: @padding;
+}
+//下内边距
+.pd-b(@padding){
+  padding-bottom: @padding;
+}
+
+//外边距
+.mg(@margin){
+  margin: @margin;
+}
+//左外边距
+.mg-l(@margin){
+  margin-left: @margin;
+}
+//右外边距
+.mg-r(@margin){
+  margin-right: @margin;
+}
+//上外边距
+.mg-t(@margin){
+  margin-top: @margin;
+}
+//下外边距
+.mg-b(@margin){
+  margin-bottom: @margin;
+}
+
+//左浮动
+.fl{
+  float: left;
+}
+//右浮动
+.fr{
+  float: right;
+}
+//水平居中
+.ct{
+  margin: 0 auto;
+}
+//垂直居中
+.vt{
+  vertical-align: middle;
+}
+//字体大小
+.fs(@fontSize){
+  font-size: @fontSize;
+}
+//字体颜色
+.cor(@color){
+  color: @color;
+}
+//字体对齐方式
+.t-a(@textAlign){
+  text-align: @textAlign;
+}
+//高度行高
+.h-th(@height){
+  height: @height;
+  line-height: @height;
+}
+//清除浮动
+.clear:after{
+  content: " ";
+  display: block;
+  clear: both;
+}
+//防止溢出
+.o-f:before{
+  content: " ";
+  display: table;
+}
+//背景色
+.bg(@color){
+background: @color;
+}
+//样式
+.dp(@display){
+  display: @display;
+}
